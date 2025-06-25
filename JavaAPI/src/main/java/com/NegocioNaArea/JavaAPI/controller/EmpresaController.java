@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/empresas")
+//para testar precisa colocar a URL http://localhost:8080/empresas/(nome do método)
 public class EmpresaController {
 
     private final EmpresaService empresaService;
