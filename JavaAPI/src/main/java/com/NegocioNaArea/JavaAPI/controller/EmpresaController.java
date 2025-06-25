@@ -5,18 +5,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/empresas")
 public class EmpresaController {
-    @Autowired
-    private EmpresaService empresaService;
+
+    private final EmpresaService empresaService;
+
+    public EmpresaController(EmpresaService empresaService) {
+        this.empresaService = empresaService;
+    }
+
 
     //métodos
     @DeleteMapping("/{cnpj}")
-    //responseEntity representa as respostas HTTP
-    public ResponseEntity<Void> deletarPorCnpj(@PathVariable String cnpj) {
-        empresaService.deletarPorCnpj(cnpj);
-        return ResponseEntity.noContent().build(); // retorna 204 No Content
+    public ResponseEntity<Void> delete(@PathVariable String cnpj){
+        empresaService.delete(cnpj);
+
+        return ResponseEntity.noContent().build();
     }
 }
