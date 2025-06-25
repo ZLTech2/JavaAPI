@@ -19,7 +19,7 @@ public class Produto {
     private double preco;
 
     @Column(nullable = false)
-    private LocalDateTime dataPostagem;
+    private LocalDateTime dataPostagem = LocalDateTime.now();
 
     @Column(nullable = false)
     private String contatoEmpresa;
