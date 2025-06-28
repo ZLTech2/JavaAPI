@@ -27,4 +27,38 @@ public class ProdutoService {
          produtoRepository.delete(produto);
     }
 
+    public Produto updateAll(Long id, Produto novosDados){
+        Produto produto = produtoRepository.findById(id)
+            .orElseThrow(()-> new RuntimeException("Produto não encontrado"));
+            produto.setNomeProduto(novosDados.getNomeProduto());
+            produto.setDescricaoProduto(novosDados.getDescricaoProduto());
+            produto.setPreco(novosDados.getPreco());
+            produto.setContatoEmpresa(novosDados.getContatoEmpresa());
+            produto.setDataPostagem(novosDados.getDataPostagem());
+
+            return produtoRepository.save(produto);
+    }
+
+    public Produto update(Long id, Produto novosDados){
+        Produto produto = produtoRepository.findById(id)
+            .orElseThrow(()-> new RuntimeException("Produto não encontrado"));
+            if(novosDados.getNomeProduto() !=null){
+                produto.setNomeProduto(novosDados.getNomeProduto());
+            }
+            if(novosDados.getDescricaoProduto() !=null){
+                produto.setDescricaoProduto(novosDados.getDescricaoProduto());
+            }
+            if(novosDados.getPreco() !=null){
+                produto.setPreco(novosDados.getPreco());
+            }
+            if(novosDados.getContatoEmpresa() !=null){
+                produto.setContatoEmpresa(novosDados.getContatoEmpresa());
+            }
+            if(novosDados.getDataPostagem() !=null){
+                produto.setDataPostagem(novosDados.getDataPostagem());
+            }
+
+            return produtoRepository.save(produto);
+    }
+
 }

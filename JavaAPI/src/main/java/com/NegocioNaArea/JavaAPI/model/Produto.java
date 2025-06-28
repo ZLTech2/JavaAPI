@@ -16,7 +16,7 @@ public class Produto {
 
     private String descricaoProduto;
 
-    private double preco;
+    private Double preco;
 
     @Column(nullable = false)
     private LocalDateTime dataPostagem = LocalDateTime.now();
@@ -64,7 +64,7 @@ public class Produto {
         this.nomeProduto = nomeProduto;
     }
 
-    public double getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
