@@ -31,14 +31,16 @@ public class EmpresaController {
         return ResponseEntity.noContent().build();
     }
 
+    // Update para atualizar todos os campos
     @PutMapping("/{cnpj}")
-    public ResponseEntity<Empresa> update(@PathVariable String cnpj, @RequestBody Empresa novosDados){
-        Empresa atualizada = empresaService.update(cnpj, novosDados);
+    public ResponseEntity<Empresa> updateAll(@PathVariable String cnpj, @RequestBody Empresa novosDados){
+        Empresa atualizada = empresaService.updateAll(cnpj, novosDados);
         return ResponseEntity.ok(atualizada);
     }
 
+    // Update para atualizar um campo específico
     @PatchMapping("/{cnpj}")
-    public ResponseEntity<Empresa> updateCampos(@PathVariable String cnpj, @RequestBody Empresa novosDados){
+    public ResponseEntity<Empresa> update(@PathVariable String cnpj, @RequestBody Empresa novosDados){
         Empresa atualizada = empresaService.update(cnpj, novosDados);
         return ResponseEntity.ok(atualizada);
     }
