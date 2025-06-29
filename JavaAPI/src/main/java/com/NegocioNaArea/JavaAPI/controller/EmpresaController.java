@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
 
 @RestController
 @RequestMapping("/empresas")
@@ -44,4 +46,20 @@ public class EmpresaController {
         Empresa atualizada = empresaService.update(cnpj, novosDados);
         return ResponseEntity.ok(atualizada);
     }
+
+    // fazendo um read
+    @GetMapping
+    public ResponseEntity<List<Empresa>> getAll(){
+        List<Empresa> empresas = empresaService.getAll();
+        return ResponseEntity.ok(empresas);
+    }
+
+    // faz uma busca de uma empresa especifica
+    @GetMapping("/{cnpj}")
+    public ResponseEntity<Empresa> getByCnpj(@PathVariable String cnpj){
+        Empresa empresa = empresaService.getByCnpj(cnpj);
+        return ResponseEntity.ok(empresa);
+    }
+
+
 }

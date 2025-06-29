@@ -4,6 +4,7 @@ import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.repository.EmpresaRepository;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
+import java.util.List;
 
 
 @Service
@@ -64,5 +65,14 @@ public class EmpresaService{
             return empresaRepository.save(empresa);
     }
 
+    // read que retorna todas as empresas
+    public List<Empresa> getAll() {
+        return empresaRepository.findAll();
+    }
 
+    // read que retorna empresa pelo cnpj
+    public Empresa getByCnpj(String cnpj) {
+        return empresaRepository.findById(cnpj)
+                .orElseThrow(() -> new RuntimeException("empresa não foi encontrada pelo cnpj: "+ cnpj));
+    }
 }
