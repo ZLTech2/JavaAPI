@@ -48,7 +48,7 @@ public class EmpresaController {
     }
 
     // fazendo um read
-    @GetMapping
+    @GetMapping("/findall")
     public ResponseEntity<List<Empresa>> getAll(){
         List<Empresa> empresas = empresaService.getAll();
         return ResponseEntity.ok(empresas);

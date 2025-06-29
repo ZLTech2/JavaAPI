@@ -61,4 +61,16 @@ public class ProdutoService {
             return produtoRepository.save(produto);
     }
 
+    //read retorna todos os produtos
+    public List<Produto> getAll() {
+        return produtoRepository.findAll();
+
+    }
+
+    // read retorna um produto pelo ID
+    public Produto getById(Long  id) {
+        return produtoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado com ID: "+ id));
+    }
+
 }

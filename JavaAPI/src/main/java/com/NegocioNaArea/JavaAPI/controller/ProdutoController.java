@@ -43,4 +43,19 @@ public class ProdutoController {
         Produto atualizado = produtoService.update(id, novosDados);
         return ResponseEntity.ok(atualizado);
     }
+
+    // read retorna todos os produtos
+    @GetMapping
+    public ResponseEntity<List<Produto>> getAll(){
+        List<Produto> produtos = produtoService.getAll();
+        return ResponseEntity.ok(produtos);
+    }
+
+    // read retorna produtos pelo o ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Produto> getById(@PathVariable Long id) {
+        Produto produto = produtoService.getById(id);
+        return ResponseEntity.ok(produto);
+    }
+
 }
