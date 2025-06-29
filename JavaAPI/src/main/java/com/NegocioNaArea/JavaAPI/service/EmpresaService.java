@@ -2,18 +2,10 @@ package com.NegocioNaArea.JavaAPI.service;
 
 import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.repository.EmpresaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
+
+
 @Service
 public class EmpresaService{
 
@@ -34,6 +26,43 @@ public class EmpresaService{
         empresaRepository.delete(empresa);
     }
 
+    // update para todos os campos
+    public Empresa updateAll(String cnpj, Empresa novosDados){
+        Empresa empresa = empresaRepository.findById(cnpj)
+            .orElseThrow(() -> new RuntimeException("Empresa não encontrada"));
+            empresa.setNomeEmpresa(novosDados.getNomeEmpresa());
+            empresa.setEmailEmpresa(novosDados.getEmailEmpresa());
+            empresa.setDescricaoEmpresa(novosDados.getDescricaoEmpresa());
+            empresa.setTelefoneEmpresa(novosDados.getTelefoneEmpresa());
+            empresa.setSenhaEmpresa(novosDados.getSenhaEmpresa());
+
+            return empresaRepository.save(empresa);
+    }
+
+    // update para campo específico
+    public Empresa update(String cnpj, Empresa novosDados){
+        Empresa empresa = empresaRepository.findById(cnpj)
+            .orElseThrow(()-> new RuntimeException("Empresa não encontrada"));
+
+            // verifica quais campos não estão nulos
+            if(novosDados.getNomeEmpresa() != null){
+                empresa.setNomeEmpresa(novosDados.getNomeEmpresa());
+            }
+            if(novosDados.getEmailEmpresa() != null){
+                empresa.setEmailEmpresa(novosDados.getEmailEmpresa());
+            }
+            if(novosDados.getDescricaoEmpresa() != null){
+                empresa.setDescricaoEmpresa(novosDados.getDescricaoEmpresa());
+            }
+            if(novosDados.getTelefoneEmpresa() != null){
+                empresa.setTelefoneEmpresa(novosDados.getTelefoneEmpresa());
+            }
+            if(novosDados.getSenhaEmpresa() != null){
+                empresa.setSenhaEmpresa(novosDados.getSenhaEmpresa());
+            }
+
+            return empresaRepository.save(empresa);
+    }
 
 
 }

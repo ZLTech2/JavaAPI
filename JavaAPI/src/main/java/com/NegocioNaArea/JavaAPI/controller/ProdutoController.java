@@ -1,9 +1,13 @@
 package com.NegocioNaArea.JavaAPI.controller;
 
+import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.service.ProdutoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +29,18 @@ public class ProdutoController {
         produtoService.delete(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    // atualização completa de todos os campos
+    @PutMapping("/{id}")
+    public ResponseEntity<Produto> updateAll(@PathVariable Long id, @RequestBody Produto novosDados){
+        Produto atualizado = produtoService.updateAll(id, novosDados);
+        return ResponseEntity.ok(atualizado);
+    }
+    // atualização com apenas um campo a escolha
+    @PatchMapping("/{id}")
+    public ResponseEntity<Produto> update(@PathVariable Long id, @RequestBody Produto novosDados){
+        Produto atualizado = produtoService.update(id, novosDados);
+        return ResponseEntity.ok(atualizado);
     }
 }
