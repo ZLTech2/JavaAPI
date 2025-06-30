@@ -65,11 +65,6 @@ public class EmpresaService{
 
             return empresaRepository.save(empresa);
     }
-    
-    //create 
-    public Empresa create (Empresa novaEmpresa){
-       return empresaRepository.save(novaEmpresa);
-    }
 
     // read que retorna todas as empresas
     public List<Empresa> getAll() {
@@ -81,4 +76,11 @@ public class EmpresaService{
         return empresaRepository.findById(cnpj)
                 .orElseThrow(() -> new RuntimeException("empresa não foi encontrada pelo cnpj: "+ cnpj));
     }
+    
+    //create 
+    public Empresa create (Empresa novaEmpresa){
+       return empresaRepository.save(novaEmpresa);
+    }
+
+    
 }

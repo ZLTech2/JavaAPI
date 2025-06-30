@@ -54,13 +54,6 @@ public class EmpresaController {
         Empresa atualizada = empresaService.update(cnpj, novosDados);
         return ResponseEntity.ok(atualizada);
     }
-    
-    //create
-    @PostMapping("/create")
-     public ResponseEntity<Empresa> create (@RequestBody Empresa novaEmpresa){
-        Empresa empresa = empresaService.create(novaEmpresa);
-         return ResponseEntity.ok(empresa);
-    }
 
     // fazendo um read
     @GetMapping("/findall")
@@ -74,5 +67,12 @@ public class EmpresaController {
     public ResponseEntity<Empresa> getByCnpj(@PathVariable String cnpj){
         Empresa empresa = empresaService.getByCnpj(cnpj);
         return ResponseEntity.ok(empresa);
+    }
+    
+    //create
+    @PostMapping("/create")
+     public ResponseEntity<Empresa> create (@RequestBody Empresa novaEmpresa){
+        Empresa empresa = empresaService.create(novaEmpresa);
+         return ResponseEntity.ok(empresa);
     }
 }

@@ -60,13 +60,7 @@ public class ProdutoService {
 
             return produtoRepository.save(produto);
     }
-    
-     //create 
-    public Produto create (Produto novoProduto){
-       return produtoRepository.save(novoProduto);
-    }
 
-    
     //read retorna todos os produtos
     public List<Produto> getAll() {
         return produtoRepository.findAll();
@@ -78,5 +72,13 @@ public class ProdutoService {
         return produtoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Produto não encontrado com ID: "+ id));
     }
+    
+     //create 
+    public Produto create (Produto novoProduto){
+       return produtoRepository.save(novoProduto);
+    }
+
+    
+    
 
 }
