@@ -2,8 +2,12 @@ package com.NegocioNaArea.JavaAPI.controller;
 
 import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.service.ProdutoService;
+
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -45,7 +49,7 @@ public class ProdutoController {
     }
 
     // read retorna todos os produtos
-    @GetMapping
+    @GetMapping ("/findall")
     public ResponseEntity<List<Produto>> getAll(){
         List<Produto> produtos = produtoService.getAll();
         return ResponseEntity.ok(produtos);
