@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class EmpresaService{
 
+    // a service chama os metodos crud da repository, ele chama lá, mas fica aqui por causa da implementação
     private final EmpresaRepository empresaRepository;
 
     public EmpresaService(EmpresaRepository empresaRepository) {

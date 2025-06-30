@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,19 +48,4 @@ public class ProdutoController {
         Produto atualizado = produtoService.update(id, novosDados);
         return ResponseEntity.ok(atualizado);
     }
-
-    // read retorna todos os produtos
-    @GetMapping ("/findall")
-    public ResponseEntity<List<Produto>> getAll(){
-        List<Produto> produtos = produtoService.getAll();
-        return ResponseEntity.ok(produtos);
-    }
-
-    // read retorna produtos pelo o ID
-    @GetMapping("/{id}")
-    public ResponseEntity<Produto> getById(@PathVariable Long id) {
-        Produto produto = produtoService.getById(id);
-        return ResponseEntity.ok(produto);
-    }
-
 }
