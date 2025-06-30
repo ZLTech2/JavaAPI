@@ -65,20 +65,16 @@ public class EmpresaService{
 
             return empresaRepository.save(empresa);
     }
-
-<<<<<<< HEAD
+    
     //create 
     public Empresa create (Empresa novaEmpresa){
        return empresaRepository.save(novaEmpresa);
     }
 
-
-=======
     // read que retorna todas as empresas
     public List<Empresa> getAll() {
         return empresaRepository.findAll();
     }
->>>>>>> feature/crud-read
 
     // read que retorna empresa pelo cnpj
     public Empresa getByCnpj(String cnpj) {

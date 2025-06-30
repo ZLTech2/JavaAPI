@@ -54,8 +54,7 @@ public class EmpresaController {
         Empresa atualizada = empresaService.update(cnpj, novosDados);
         return ResponseEntity.ok(atualizada);
     }
-
-<<<<<<< HEAD
+    
     //create
     @PostMapping("/create")
      public ResponseEntity<Empresa> create (@RequestBody Empresa novaEmpresa){
@@ -63,10 +62,6 @@ public class EmpresaController {
          return ResponseEntity.ok(empresa);
     }
 
-
-
-}
-=======
     // fazendo um read
     @GetMapping("/findall")
     public ResponseEntity<List<Empresa>> getAll(){
@@ -80,7 +75,4 @@ public class EmpresaController {
         Empresa empresa = empresaService.getByCnpj(cnpj);
         return ResponseEntity.ok(empresa);
     }
-
-
 }
->>>>>>> feature/crud-read
