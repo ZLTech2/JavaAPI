@@ -1,6 +1,4 @@
 package com.NegocioNaArea.JavaAPI.service;
-
-import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;

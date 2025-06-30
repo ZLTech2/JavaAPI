@@ -1,6 +1,5 @@
 package com.NegocioNaArea.JavaAPI.controller;
 
-import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.service.ProdutoService;
 import org.springframework.http.ResponseEntity;
