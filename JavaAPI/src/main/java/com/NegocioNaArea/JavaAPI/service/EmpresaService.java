@@ -9,6 +9,7 @@ import java.util.Optional;
 @Service
 public class EmpresaService{
 
+    // a service chama os metodos crud da repository, ele chama lá, mas fica aqui por causa da implementação
     private final EmpresaRepository empresaRepository;
 
     public EmpresaService(EmpresaRepository empresaRepository) {
@@ -63,6 +64,12 @@ public class EmpresaService{
 
             return empresaRepository.save(empresa);
     }
+
+    //create 
+    public Empresa create (Empresa novaEmpresa){
+       return empresaRepository.save(novaEmpresa);
+    }
+
 
 
 }

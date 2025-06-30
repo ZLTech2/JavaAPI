@@ -1,5 +1,6 @@
 package com.NegocioNaArea.JavaAPI.service;
 
+import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
@@ -60,5 +61,13 @@ public class ProdutoService {
 
             return produtoRepository.save(produto);
     }
+
+    
+     //create 
+    public Produto create (Produto novoProduto){
+       return produtoRepository.save(novoProduto);
+    }
+
+    
 
 }
