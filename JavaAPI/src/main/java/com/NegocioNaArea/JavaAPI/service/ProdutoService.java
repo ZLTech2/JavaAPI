@@ -3,6 +3,7 @@ import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -59,13 +60,5 @@ public class ProdutoService {
 
             return produtoRepository.save(produto);
     }
-
-    
-     //create 
-    public Produto create (Produto novoProduto){
-       return produtoRepository.save(novoProduto);
-    }
-
-    
 
 }

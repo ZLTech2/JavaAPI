@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
 
 
 
@@ -53,6 +55,7 @@ public class EmpresaController {
         return ResponseEntity.ok(atualizada);
     }
 
+<<<<<<< HEAD
     //create
     @PostMapping("/create")
      public ResponseEntity<Empresa> create (@RequestBody Empresa novaEmpresa){
@@ -63,3 +66,21 @@ public class EmpresaController {
 
 
 }
+=======
+    // fazendo um read
+    @GetMapping("/findall")
+    public ResponseEntity<List<Empresa>> getAll(){
+        List<Empresa> empresas = empresaService.getAll();
+        return ResponseEntity.ok(empresas);
+    }
+
+    // faz uma busca de uma empresa especifica
+    @GetMapping("/{cnpj}")
+    public ResponseEntity<Empresa> getByCnpj(@PathVariable String cnpj){
+        Empresa empresa = empresaService.getByCnpj(cnpj);
+        return ResponseEntity.ok(empresa);
+    }
+
+
+}
+>>>>>>> feature/crud-read
