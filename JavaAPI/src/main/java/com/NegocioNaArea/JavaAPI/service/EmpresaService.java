@@ -76,4 +76,11 @@ public class EmpresaService{
         return empresaRepository.findById(cnpj)
                 .orElseThrow(() -> new RuntimeException("empresa não foi encontrada pelo cnpj: "+ cnpj));
     }
+    
+    //create 
+    public Empresa create (Empresa novaEmpresa){
+       return empresaRepository.save(novaEmpresa);
+    }
+
+    
 }

@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,6 +61,10 @@ public class EmpresaController {
         Empresa empresa = empresaService.getByCnpj(cnpj);
         return ResponseEntity.ok(empresa);
     }
-
-
+    //create
+    @PostMapping("/create")
+     public ResponseEntity<Empresa> create (@RequestBody Empresa novaEmpresa){
+        Empresa empresa = empresaService.create(novaEmpresa);
+         return ResponseEntity.ok(empresa);
+    }
 }

@@ -1,10 +1,10 @@
 package com.NegocioNaArea.JavaAPI.service;
 
-import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -62,12 +62,22 @@ public class ProdutoService {
             return produtoRepository.save(produto);
     }
 
+    //read retorna todos os produtos
+    public List<Produto> getAll() {
+        return produtoRepository.findAll();
+
+    }
+
+    // read retorna um produto pelo ID
+    public Produto getById(Long  id) {
+        return produtoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado com ID: "+ id));
+    }
     
      //create 
     public Produto create (Produto novoProduto){
        return produtoRepository.save(novoProduto);
     }
 
-    
 
 }
