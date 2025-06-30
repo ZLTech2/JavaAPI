@@ -1,13 +1,10 @@
 package com.NegocioNaArea.JavaAPI.controller;
 
+import com.NegocioNaArea.JavaAPI.model.Empresa;
 import com.NegocioNaArea.JavaAPI.model.Produto;
 import com.NegocioNaArea.JavaAPI.service.ProdutoService;
-
-import java.util.List;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,5 +44,12 @@ public class ProdutoController {
     public ResponseEntity<Produto> update(@PathVariable Long id, @RequestBody Produto novosDados){
         Produto atualizado = produtoService.update(id, novosDados);
         return ResponseEntity.ok(atualizado);
+    }
+
+     //create
+    @PostMapping("/create")
+     public ResponseEntity<Produto> create (@RequestBody Produto novoProduto){
+        Produto produto = produtoService.create(novoProduto);
+         return ResponseEntity.ok(produto);
     }
 }
