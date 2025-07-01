@@ -7,6 +7,9 @@ O quarto e último passo, é testar todas as rotas no postman ou swagger, defini
 Um detalhe para os métodos DELETE, PUT, PATCH e GET específico, é que deverá ser passado o CNPJ da empresa no caminho da URL, logo após o "empresas/" e no caso dos  produtos deverá ser passado o ID do produto depois de "produtos/".
 Os métodos POST e PUT, deverão ser informados todos os campos, juntamente com o valor.
 
+Sobre o projeto:
+O projeto consiste em uma plataforma de divulgação, onde pequenos empreendedores realizam posts dos seus produtos, ganhando mais público e fazendo com que seu comércio cresça.
+Foi desenvolvido utilizando funcionalidades CRUD (CREATE, READ, UPDATE, DELETE), para criação, leitura, atualização, e exclusão de empresas e produtos dessas empresas.
 
 Integrantes do grupo:
 Artur Normandia Silva; RA: 2920482321021
