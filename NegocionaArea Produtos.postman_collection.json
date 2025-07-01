@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "786ee1f6-568a-40c2-aae2-ba3acfb31eaa",
+		"name": "NegocionaArea Produtos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46275813",
+		"_collection_link": "https://rafaelbenicio-3507736.postman.co/workspace/Rafael-Benicio's-Workspace~82ff70d2-d0d3-438a-8069-60ee8a9530b8/collection/46275813-786ee1f6-568a-40c2-aae2-ba3acfb31eaa?action=share&source=collection_link&creator=46275813"
+	},
+	"item": [
+		{
+			"name": "Atualizar um campo específico",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"preco\" : 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar todos os campos dos Produtos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contatoEmpresa\": \"(11) 954830382\",\r\n    \"descricaoProduto\": \"alguma descrição\",\r\n    \"nomeProduto\": \"Leite italac\",\r\n    \"preco\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarProdutos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/produtos/findall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"findall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar produto por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/produtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Produtos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contatoEmpresa\": \"(11) 954830382\",\r\n    \"descricaoProduto\": \"alguma descrição\",\r\n    \"nomeProduto\": \"arroz\",\r\n    \"preco\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir produtos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/produtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

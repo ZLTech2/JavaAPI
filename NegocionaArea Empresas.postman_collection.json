@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "d62ebcc2-d384-4ee6-8fb9-d33fa68382b5",
+		"name": "NegocionaArea Empresas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46275813",
+		"_collection_link": "https://rafaelbenicio-3507736.postman.co/workspace/Rafael-Benicio's-Workspace~82ff70d2-d0d3-438a-8069-60ee8a9530b8/collection/46275813-d62ebcc2-d384-4ee6-8fb9-d33fa68382b5?action=share&source=collection_link&creator=46275813"
+	},
+	"item": [
+		{
+			"name": "Atualizar um campo específico",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricaoEmpresa\": \"Loja de calçados\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresas/5540041120004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"5540041120004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar todos os campos da Empresa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricaoEmpresa\": \"Loja de doces\",\r\n    \"emailEmpresa\": \"yas@gmail.com\",\r\n    \"nomeEmpresa\": \"yas doces\",\r\n    \"senhaEmpresa\": \"123\",\r\n    \"telefoneEmpresa\": \"11954837302\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresas/5540041120004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"5540041120004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Empresas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"preco\" : 8\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresas/findall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"findall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar empresa por cnpj",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"preco\" : 8\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresas/1234567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"1234567"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Empresas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cnpjEmpresa\": \"99433021920001\",\r\n    \"descricaoEmpresa\": \"Games do Artuzao\",\r\n    \"emailEmpresa\": \"artur@gmail.com\",\r\n    \"nomeEmpresa\": \"Artuzao Games\",\r\n    \"senhaEmpresa\": \"12345\",\r\n    \"telefoneEmpresa\": \"(11) 98765-0943\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresas/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir empresa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empresas/5540041120004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresas",
+						"5540041120004"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
